@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UGA Roommate Finder</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f4 0%, #e2e2e2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        header {
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #BA0C2F;
+        }
+
+        .user-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .user-list li {
+            background-color: #BA0C2F;
+            color: white;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .user-list li:hover {
+            background-color: #a00a2a;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .user-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .user-details span {
+            margin: 2px 0;
+        }
+
+        .user-name {
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .user-major,
+        .user-age,
+        .user-gender,
+        .user-hometown,
+        .user-hobbies {
+            font-size: 16px;
+        }
+
+        .access-button {
+            background-color: #ffffff;
+            color: #BA0C2F;
+            border: 2px solid #BA0C2F;
+            border-radius: 8px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+            align-self: center;
+            margin-top: 10px;
+        }
+
+        .access-button:hover {
+            background-color: #BA0C2F;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .access-button:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(186, 12, 47, 0.3);
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+    <script>
+        function requestDataAccess(name) {
+            document.getElementById('message').textContent = `Request to access ${name}'s data has been sent.`;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="Media\GEORGIA-FS-FC.png" alt="UGA Housing Logo" class="logo">
+        </header>
+        <main>
+            <h1 class="title">UGA Roommate Finder</h1>
+            <ul class="user-list">
+                <li>
+                    <div class="user-details">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-major">Computer Science</span>
+                        <span class="user-age">Age: 21</span>
+                        <span class="user-gender">Gender: Male</span>
+                        <span class="user-hometown">Hometown: Atlanta, GA</span>
+                        <span class="user-hobbies">Hobbies: Gaming, Hiking</span>
+                        <button class="access-button" onclick="requestDataAccess('John Doe')">Request Data Access</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-details">
+                        <span class="user-name">Jane Smith</span>
+                        <span class="user-major">Biology</span>
+                        <span class="user-age">Age: 22</span>
+                        <span class="user-gender">Gender: Female</span>
+                        <span class="user-hometown">Hometown: Athens, GA</span>
+                        <span class="user-hobbies">Hobbies: Reading, Swimming</span>
+                        <button class="access-button" onclick="requestDataAccess('Jane Smith')">Request Data Access</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-details">
+                        <span class="user-name">Alex Johnson</span>
+                        <span class="user-major">Mechanical Engineering</span>
+                        <span class="user-age">Age: 23</span>
+                        <span class="user-gender">Gender: Male</span>
+                        <span class="user-hometown">Hometown: Savannah, GA</span>
+                        <span class="user-hobbies">Hobbies: Cycling, Cooking</span>
+                        <button class="access-button" onclick="requestDataAccess('Alex Johnson')">Request Data Access</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-details">
+                        <span class="user-name">Emily Davis</span>
+                        <span class="user-major">Economics</span>
+                        <span class="user-age">Age: 21</span>
+                        <span class="user-gender">Gender: Female</span>
+                        <span class="user-hometown">Hometown: Augusta, GA</span>
+                        <span class="user-hobbies">Hobbies: Traveling, Photography</span>
+                        <button class="access-button" onclick="requestDataAccess('Emily Davis')">Request Data Access</button>
+                    </div>
+                </li>
+                <li>
+                    <div class="user-details">
+                        <span class="user-name">Michael Brown</span>
+                        <span class="user-major">Psychology</span>
+                        <span class="user-age">Age: 22</span>
+                        <span class="user-gender">Gender: Male</span>
+                        <span class="user-hometown">Hometown: Macon, GA</span>
+                        <span class="user-hobbies">Hobbies: Music, Sports</span>
+                        <button class="access-button" onclick="requestDataAccess('Michael Brown')">Request Data Access</button>
+                    </div>
+                </li>
+            </ul>
+            <p id="message" class="message"></p>
+        </main>
+    </div>
+</body>
+</html>
